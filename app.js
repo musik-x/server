@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app
   .use('/api/spotify/read', require('./routes/spotify/read'))
   .use('/api/spotify/search', require('./routes/spotify/search'))
+  .use('/api/spotify/', require('./routes/spotify/index'))
   .use('/', indexRouter)
 
-module.exports = app;
+module.exports = app

@@ -1,6 +1,6 @@
 const router = require('express')
   .Router()
-const spotifyApi = require('../../helpers/spotify')
+const spotifyApi = require('../../helpers/spotify/spotify')
 
 router
   .get('/track/:keyword', ({ params }, res, next) => {
@@ -18,6 +18,9 @@ router
     spotifyApi.searchArtists(params.keyword)
       .then(function (data) {
         console.log('Search by "Love"', data)
+        res.json({
+          artists: data.body.artists.items
+        })
         res.json(data.body)
       }, function (err) {
         console.error(err)

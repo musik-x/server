@@ -4,5 +4,5 @@ const spotifyApi = new SpotifyWebApi({
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
   redirectUri: process.env.SPOTIFY_REDIRECT
 })
-spotifyApi.setAccessToken(process.env.SPOTIFY_CLIEN_ACCESS)
+spotifyApi.setAccessToken(process.env.SPOTIFY_CLIENT_ACCESS)
 module.exports = spotifyApi
