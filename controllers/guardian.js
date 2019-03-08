@@ -3,7 +3,7 @@ const axios = require('axios')
 class Controller {
     static search(req, res) {
         axios({
-            url: `https://content.guardianapis.com/search?q=migos&${process.env.GUARDIAN_KEY}`,
+            url: `https://content.guardianapis.com/search?q=${req.params.keyword}&${process.env.GUARDIAN_KEY}`,
             method: 'get'
         })
         .then(({data}) => {
