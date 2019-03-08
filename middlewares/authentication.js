@@ -1,7 +1,6 @@
 const { decode } = require('../helpers/jwt')
 
 function authentication(req, res, next) {
-    // console.log(req.headers, 'headerss')
     if (!req.headers.access_token) {
         res
             .status(401)
